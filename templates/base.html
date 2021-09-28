@@ -1,0 +1,34 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <!-- BOOTSTRAP LINK -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}" />
+
+    <!-- FONT ICONS -->
+    <link rel="stylesheet" href="{% static 'assets/font-awesome/css/font-awesome.min.css' %}">
+
+    
+
+    <!-- CUSTOM CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/main.css' %}" />
+  </head>
+  <body>
+    <section class="tee-body">
+      <div class="tee-form p-4">
+        <div class="tee-form__left p-4">
+          
+        </div>
+        <div class="tee-form__right p-4">
+          {% block ContentForm %}
+            
+          {% endblock ContentForm %}
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

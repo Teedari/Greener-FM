@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
 
 $primaryColor : #FF725E;
+$greenColor: #8ee181;
 $font-family: 'Poppins', sans-serif;
 
 
@@ -9,10 +10,17 @@ $font-family: 'Poppins', sans-serif;
     font-family: $font-family;
     width: 100%;
     min-height: 100vh;
-    background-color: $primaryColor;
+    background-color: $greenColor;
     display: flex;
     align-items: center;
     justify-content: center;
+  }
+
+  &-widget{
+    padding: 2rem 2rem;
+    i{
+      color: $greenColor;
+    }
   }
 
   &-btn{
@@ -21,7 +29,10 @@ $font-family: 'Poppins', sans-serif;
       
       padding: .5rem 4rem;
       color: white;
-      background: $primaryColor;
+      background: $greenColor;
+      &:hover{
+        background: darken($color: $greenColor, $amount: 20);
+      }
     }
 
     &-logout{
@@ -31,11 +42,11 @@ $font-family: 'Poppins', sans-serif;
   }
 
   &-form{
-    width: 85vw;
+    width: 800px;
     height: 95vh;
     border-radius: .8rem;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 4fr;
     &__left{
       background: #ffffff57;
     }
@@ -53,13 +64,46 @@ $font-family: 'Poppins', sans-serif;
 
       .form-group{
         label{
-          padding-left: 2rem;
+         
+        }
+
+        input{
+          border: 0;
+          border-bottom: 1px solid $greenColor;
+
+          &:focus, &:focus-within{
+            box-shadow: none;
+            outline: 0;
+            border-top: 1px solid $greenColor;
+          }
         }
       }
       .input-group{
         span{
           border: none;
           background: none;
+        }
+      }
+    }
+  }
+}
+
+
+/**** CUSTOMIZATION ***/
+.logo, .sidebar{
+  background: $greenColor!important;
+}
+.sidebar{
+  background: $greenColor!important;
+}
+.sidebar-wrapper{
+  background: $greenColor!important;
+  ul{
+    li{
+      a{
+        color:rgb(12, 12, 12) !important;
+        i{
+          color: #244972 !important;
         }
       }
     }
