@@ -1,0 +1,72 @@
+<div class="logo">
+  <a href="{% url 'greener:index' %}" class="simple-text logo-mini">
+    FM
+  </a>
+  <a href="{% url 'greener:index' %}" class="simple-text logo-normal">
+    Greener FM
+  </a>
+</div>
+<div class="sidebar-wrapper" id="sidebar-wrapper">
+  <ul class="nav">
+    <li class='active'>
+      <a href="{% url 'greener:index' %}">
+        <i class="now-ui-icons design_app"></i>
+        <p>Dashboard</p>
+      </a>
+    </li>
+    <li>
+      <a href="{% url 'greener:add_employee' %}">
+        <i class=" fa fa-users"></i>
+        <p>Register Employee</p>
+      </a>
+    </li>
+    <li>
+      <a href="{% url 'greener:view_employees' %}">
+        <i class="fa fa-users"></i>
+        <p>List Employee</p>
+      </a>
+    </li>
+    <li>
+      <a href="{% url 'greener:index' %}">
+        <i class="fa fa-newspaper-o"></i>
+        <p>Create Program</p>
+      </a>
+    </li>
+    <li>
+      <a href="{% url 'greener:view_programs' %}">
+        <i class="fa fa-newspaper-o"></i>
+        <p>All Programs</p>
+      </a>
+    </li>
+    <li class="">
+      <a href="{% url 'greener:announcement' %}">
+        <i class="now-ui-icons ui-1_bell-53"></i>
+        <p>Announcements</p>
+      </a>
+    </li>
+    <li>
+      <a href="{% url 'greener:sponsorship' %}">
+        <i class="fa fa-money"></i>
+        <p>Sponsorship</p>
+      </a>
+    </li>
+    <li>
+      <a href="./tables.html">
+        <i class="now-ui-icons design_bullet-list-67"></i>
+        <p>Table List</p>
+      </a>
+    </li>
+    <li>
+      <a href="./typography.html">
+        <i class="now-ui-icons text_caps-small"></i>
+        <p>Typography</p>
+      </a>
+    </li>
+    <li class="active-pro tee-btn-logout">
+      <a href="./upgrade.html">
+        <i class="fa fa-plane"></i>
+        <p>Log out</p>
+      </a>
+    </li>
+  </ul>
+</div>

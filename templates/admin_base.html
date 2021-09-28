@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="apple-touch-icon" sizes="76x76" href="assets/img/apple-icon.png">
+  <link rel="icon" type="image/png" href="assets/img/favicon.png">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+  <title>
+    Now UI Dashboard by Creative Tim
+  </title>
+  <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
+  <!--     Fonts and icons     -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700,200" rel="stylesheet" />
+
+  <!-- FONT ICONS -->
+  <link rel="stylesheet" href="{% static 'assets/font-awesome/css/font-awesome.min.css' %}">
+
+    
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+  <!-- CSS Files -->
+  <link href="{% static 'assets/css/bootstrap.min.css' %}" rel="stylesheet" />
+  <link href="{% static 'assets/css/now-ui-dashboard.css' %}" rel="stylesheet" />
+  <!-- CSS Just for demo purpose, don't include it in your project -->
+  <link href="{% static 'assets/demo/demo.css' %}" rel="stylesheet" />
+
+  <!-- AWESOME NOTFICATION CSS -->
+  <link rel="stylesheet" href="{% static 'assets/awesome-alert/css/style.css' %}">
+  <!-- TEE CSS -->
+  <link rel="stylesheet" href="{% static 'assets/css/main.css' %}">
+</head>
+
+<body class="">
+  <div class="wrapper ">
+    <div class="sidebar" data-color="orange">
+      <!--
+        Tip 1: You can change the color of the sidebar using: data-color="blue | green | orange | red | yellow"
+    -->
+
+      <!-- SIDE BAR -->
+      {% include "inc/sidebar.html" %}
+      <!-- /SIDE BAR -->
+    </div>
+    <div class="main-panel" id="main-panel">
+      <!-- Navbar -->
+      {% include "inc/navbar.html" %}
+      <!-- End Navbar -->
+      <!--PANEL HEADER-->
+      <div class="panel-header">
+      {% block Heading %}
+
+      {% endblock Heading %}
+      </div>
+      <!-- /PANEL HEADER-->
+      <!--Content Start-->
+      <div class="content">
+        <!-- Content Goes here-->
+        {% block Content %}
+          
+        {% endblock Content %}
+      </div>
+       <!--Content END-->
+      <footer class="footer">
+        <div class=" container-fluid ">
+          <nav>
+            <ul>
+              <li>
+                <a href="https://www.creative-tim.com">
+                  Creative Tim
+                </a>
+              </li>
+              <li>
+                <a href="http://presentation.creative-tim.com">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="http://blog.creative-tim.com">
+                  Blog
+                </a>
+              </li>
+            </ul>
+          </nav>
+          <div class="copyright" id="copyright">
+            &copy; <script>
+              document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
+            </script>, Designed by <a href="https://www.invisionapp.com" target="_blank">Invision</a>. Coded by <a href="https://www.creative-tim.com" target="_blank">Creative Tim</a>.
+          </div>
+        </div>
+      </footer>
+    </div>
+  </div>
+  <!--   Core JS Files   -->
+  <script src="{% static 'assets/js/core/jquery.min.js' %}"></script>
+  <script src="{% static 'assets/js/core/popper.min.js' %}"></script>
+  <script src="{% static 'assets/js/core/bootstrap.min.js' %}"></script>
+  <script src="{% static 'assets/js/plugins/perfect-scrollbar.jquery.min.js' %}"></script>
+  <script src="{% static 'assets/js/plugins/bootstrap-notify.js' %}"></script>
+  <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+  <script src="{% static 'assets/js/now-ui-dashboard.min.js' %}" type="text/javascript"></script>
+  <script src="{% static 'assets/demo/demo.js' %}"></script>
+
+  <!-- AWESOME NOFICATION JS -->
+  <script src="{% static 'assets/awesome-alert/js/awesome-notification.js' %}"></script>
+
+  <script src="{% static 'assets/jquery/jquery.3.2.1.min.js' %}"></script>
+  {% block Script %}
+    
+  {% endblock Script %}
+</body>
+
+</html>

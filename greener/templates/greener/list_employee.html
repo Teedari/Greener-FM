@@ -1,0 +1,40 @@
+{% extends "admin_base.html" %}
+
+
+{% block Heading %}
+  <p class="display-3 text-white text-center">All, Employees</p>
+{% endblock Heading %}
+
+{% block Content %}
+  <div class="card">
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Email</th>
+            <th>Options</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if employees %}
+            {% for employee in employees  %}
+              <tr>
+                <td>{{employee.id}}</td>
+                <td>{{employee.fullname}}</td>
+                <td>{{employee.phone}}</td>
+                <td>{{employee.email}}</td>
+                <td>
+                  <a href="{% url 'greener:create_program' employee.id %}" class="btn btn-outline-primary"><i class="fa fa-eye"></i></a>
+                  <a href="#" class="btn btn-danger"><i class="fa fa-trash"></i></a>
+                </td>
+              </tr>
+            {% endfor %}
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+{% endblock Content %}
