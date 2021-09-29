@@ -2,9 +2,35 @@
 
 
 {% block Heading %}
-  <p class="display-3 text-white text-center">Sponsorship,</p>
+  <p class="display-3 text-white text-center">All, Sponsorships</p>
 {% endblock Heading %}
 
 {% block Content %}
-  
+  <div class="card">
+    <div class="card-body">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Option</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% if sponsorships %}
+            {% for sponsorship in sponsorships  %}
+              <tr>
+                <td>{{sponsorship.id}}</td>
+                <td>{{sponsorship.name}}</td>
+                <td>
+                  <a href="{% url 'greener:sponsorship' sponsorship.id %}" class="btn btn-danger">
+                    <i class="fa fa-trash"></i>
+                </td>
+              </tr>
+            {% endfor %}
+          {% endif %}
+        </tbody>
+      </table>
+    </div>
+  </div>
 {% endblock Content %}

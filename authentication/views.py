@@ -12,11 +12,26 @@ def index(request):
     form = CustomLoginForm(request.POST)
     if form.is_valid():
       user = authenticate(username=form.cleaned_data.get('username'), password=form.cleaned_data.get('password'))
-      print(user)
-      if user is not None:
+      # print()
+      if user.is_staff == False:
         user = login(request,user)
         
+        return HttpResponseRedirect(reverse('host:index'))
+      
+      else:
+        user = login(request,user)
+      
         return HttpResponseRedirect(reverse('greener:index'))
       # user = authenticate()
     context['errs'] = form.errors
   return render(request, 'authentication/index.html', context)
+
+
+def signOut(request):
+  try:
+    del request.session['sponsorship']
+    del request.session['announcement']
+  except:
+    print('SignOut delete session')
+  logout(request)
+  return HttpResponseRedirect(reverse('authentication:sign_in'))

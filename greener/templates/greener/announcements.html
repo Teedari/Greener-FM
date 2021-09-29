@@ -2,7 +2,7 @@
 
 
 {% block Heading %}
-  <p class="display-3 text-white text-center">All, Announcements</p>
+  <p class="display-3 text-white text-center">All, Programs</p>
 {% endblock Heading %}
 
 {% block Content %}
@@ -16,15 +16,11 @@
           </tr>
         </thead>
         <tbody>
-          {% if announcements %}
-            {% for announcement in announcements  %}
+          {% if sponsors %}
+            {% for sponsor in sponsors  %}
               <tr>
-                <td>{{announcement.id}}</td>
-                <td>{{announcement.message}}</td>
-                <td>
-                  <a href="{% url 'greener:announcement_delete' announcement.id %}" class="btn btn-danger">
-                    <i class="fa fa-trash"></i>
-                </td>
+                <td>{{sponsor.id}}</td>
+                <td>{{sponsor.message}}</td>
               </tr>
             {% endfor %}
           {% endif %}

@@ -1,0 +1,34 @@
+{% extends "user_base.html" %}
+
+
+{% block Heading %}
+  <p class="display-3 text-white text-center">Welcome, to host Dashboard</p>
+{% endblock Heading %}
+
+{% block Content %}
+  {% if programs %}
+    {% for program in programs  %}
+    <div class="row">
+      <div class="col-md-4">
+        <div class="card p-4">
+          <div class="card-body">
+            <p class="display-6">
+              {{program.title}}
+            </p>
+            <p class="display-6">
+              {{program.time}}
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-8">
+        {% for sponsorship in program.sponsorship.all %}
+        <div class="card p-4 mb-2">
+          <p>{{sponsorship.name}}</p>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  {% endif %}
+{% endblock Content %}

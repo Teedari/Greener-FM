@@ -1,5 +1,5 @@
 from django.urls import path
-from .views import home, register_employee, list_employee, create_program, list_program, announcement, sponsorship
+from .views import home, register_employee, list_employee, create_program, list_program, announcement, add_announcement , sponsorship , add_sponsorship, sponsorship_delete, announcement_delete
 
 
 app_name = 'greener'
@@ -16,5 +16,15 @@ urlpatterns = [
   path('program/view', list_program , name='view_programs'),
   
   path('annoucement', announcement , name='announcement'),
+  
+  path('annoucement/add', add_announcement , name='add_announcement'),
+  
   path('sponsorship', sponsorship , name='sponsorship'),
+  
+  path('sponsorship/<int:id>/delete', sponsorship_delete , name='sponsorship_delete'),
+  
+  path('annoucement/<int:id>/delete', announcement_delete , name='announcement_delete'),
+  
+  path('sponsorship/add', add_sponsorship , name='add_sponsorship'),
+  
 ]

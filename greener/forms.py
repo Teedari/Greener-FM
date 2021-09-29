@@ -1,7 +1,9 @@
+from django.db import models
+from django.db.models import fields
 from helpers.funcs import separate_fullname
 from django.contrib.auth.models import User
 from django import forms
-from .models import Program
+from .models import Announcement, Program, Sponsorship
 
 
 
@@ -17,22 +19,18 @@ class CreateEmployeeUser(forms.ModelForm):
     name = separate_fullname(self.cleaned_data.get('first_name'))
     user.first_name = name['first_name']
     user.last_name = name['last_name']
-    user.set_password = self.cleaned_data.get('phone')
+    user.set_password = 'Emission*12'
 
     if commit:
       user.save()
-      # profile.user = user
-      # profile.save()
-      # print('User form saved successfully', profile)
-      
-    # user.set_password(self.cleaned_data.get('phone'))
+
     return super().save()
     
 class ProgramForm(forms.ModelForm):
   class Meta:
     model = Program
     fields = '__all__'
-    exclude = ['sponsorship', 'announcement', 'day']
+    exclude = ['sponsorship', 'announcement', 'days', 'host']
     
     
   def save(self, commit=True, profile=None):
@@ -43,3 +41,27 @@ class ProgramForm(forms.ModelForm):
       instance.save()
       return super().save()
       
+      
+class AnnouncementForm(forms.ModelForm):
+  class Meta:
+    fields = '__all__'
+    model = Announcement
+    
+  def save(self, commit=True, pk = 1):
+    announcement = super().save(commit=False)
+    if commit:
+      announcement.save()
+      
+    return super().save()
+    
+class SponsorshipForm(forms.ModelForm):
+  class Meta:
+    fields = '__all__'
+    model = Sponsorship
+    
+  def save(self, commit=True):
+    sponsorship = super().save(commit=False)
+    if commit:
+      sponsorship.save()
+      
+    return super().save()

@@ -41,7 +41,8 @@ INSTALLED_APPS = [
     
     #app
     'greener',
-   'authentication',
+    'authentication',
+    'host',
 ]
 
 MIDDLEWARE = [

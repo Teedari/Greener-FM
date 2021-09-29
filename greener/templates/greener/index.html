@@ -2,19 +2,23 @@
 
 
 {% block Heading %}
-  <p class="display-3 text-white text-center">Welcome, Dashboard</p>
+  <p class="display-3 text-white text-center">Welcome {{request.user}}, Dashboard</p>
 {% endblock Heading %}
 
 {% block Content %}
-  <div class="row">
+  <!-- <div class="row">
     <div class="col-md-4">
       <div class="card tee-widget">
         <div class="row">
           <div class="col-md-4 ">
             <i class="fa fa-users" style="font-size: 5rem;"></i>
           </div>
+          <div class="col-md-8">
+            <small>label</small>
+            <p><b></b></p>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
 {% endblock Content %}
